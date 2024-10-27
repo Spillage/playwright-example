@@ -1,0 +1,18 @@
+{
+  "name": "playwright-case3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test"
+  },
+  "keywords": [],
+  "author": "luxie",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@synthetixio/synpress": "^3.7.3",
+    "@synthetixio/synpress-cache": "0.0.1-alpha.9",
+    "@types/node": "^22.8.1"
+  }
+}

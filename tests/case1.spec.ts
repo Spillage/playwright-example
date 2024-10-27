@@ -18,15 +18,12 @@ test("connect wallet using default metamask account and buy an NFT", async ({ pa
     await metamask.confirmSignatureRequest();
 
     await page.click("text=View popular collections");
-    await page.click("text=Rumble Arcade Testnet");
-    await page.click("text=Baahssassin Rank 2")
-
-    await page.waitForTimeout(10000);
+    await page.waitForTimeout(2000);
+    const linkboxDivsInNFT = await page.locator('div.chakra-linkbox').first();
+    await linkboxDivsInNFT.click();
     await page.click('button:has-text("Buy Now")');
-
     await page.waitForTimeout(5000);
     await page.screenshot({path:"test-results/screenshot.png"});
-    await page.waitForTimeout(1000);
     expect(page.locator("text=Insufficient Balance"));
 });
 

@@ -1,1 +1,1 @@
-![Test Result](/test-results/screenshot.png)
+![Test Result](/screenshot.png)

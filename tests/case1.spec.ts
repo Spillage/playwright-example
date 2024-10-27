@@ -19,10 +19,15 @@ test("connect wallet using default metamask account and buy an NFT", async ({ pa
 
     await page.click("text=View popular collections");
     await page.waitForTimeout(2000);
+    const linkboxDivsInCollection = await page.locator('div.chakra-linkbox').first();
+    await linkboxDivsInCollection.click();
     const linkboxDivsInNFT = await page.locator('div.chakra-linkbox').first();
+    await linkboxDivsInNFT.first().click();
+
     await linkboxDivsInNFT.click();
-    await page.click('button:has-text("Buy Now")');
     await page.waitForTimeout(5000);
+    await page.click('button:text("Buy Now")');
+    await page.waitForTimeout(10000);
     await page.screenshot({path:"test-results/screenshot.png"});
     expect(page.locator("text=Insufficient Balance"));
 });

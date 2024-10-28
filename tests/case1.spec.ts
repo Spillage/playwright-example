@@ -17,7 +17,9 @@ test("connect wallet using default metamask account and buy an NFT", async ({ pa
     await page.locator('button:text("Verify")').click();
     await metamask.confirmSignatureRequest();
 
+    expect (page.url()).toBe("https://testnet.sphere.market/beam-testnet");
     await page.click("text=View popular collections");
+
     await page.waitForTimeout(2000);
     const linkboxDivsInCollection = await page.locator('div.chakra-linkbox').first();
     await linkboxDivsInCollection.click();
